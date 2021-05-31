@@ -8,30 +8,23 @@
     padding: 16px;
 }
 
-.example code {
-    font-family: monospace;
-    font-size: 16px;
-    font-weight: 700;
-    background-color: #009688;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 2px;
-}
-
-.example .background {
-    height: 240px;
-    // Путь к изображениям из SASS-файла всегда такой, как из папки css
-    background-image: url('../images/demo.jpg');
-    background-size: cover;
-    background-position: center;
-}
 li {
     list-style: none;
 }
 .search-form {
+    z-index: 2;
+
     display: inline-block;
+    position: fixed;
+
+    left: 50%;
+    transform: translate(-50%, -35%);
+
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: black;
 }
-.btn {
+.button {
     position: sticky;
     top: 50%;
     left: 50%;
@@ -39,6 +32,10 @@ li {
     display: inline-flex;
     align-items: center;
     align-self: center;
+
+    font-weight: 900;
+    padding: 10px 30px;
+
     background-color: blue;
     color: #fff;
     border-radius: 5px;
@@ -46,6 +43,8 @@ li {
 .gallery {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 30px;
+    padding-left: 0;
     margin: 20px;
 }
 .stats {
@@ -54,4 +53,27 @@ li {
 }
 .stats .stats-item:not(:last-child) {
     margin-right: 10px;
+}
+.button {
+    opacity: 0;
+}
+.button.is-active {
+    opacity: 1;
+}
+.gallery__item {
+    margin: 20px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.photo-card {
+    position: relative;
+}
+.stats {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: -webkit-fill-available;
+    background-color: rgba(241, 233, 231, 0.4);
+
+    border-radius: 5px;
 }
