@@ -6,7 +6,7 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{}],"EGsz":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.refs=void 0;const e={searchForm:document.querySelector("#search-form"),galleryImg:document.querySelector(".gallery-js"),loadMoreBtn:document.querySelector('[data-action="load-more"]')};exports.refs=e;
 },{}],"eQwa":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;const e="https://pixabay.com/api",t="21816580-71493a440b7096ef43b823e18";class r{constructor(){this.searchQuery="",this.page=1}fetchPicture(){const r=`${e}/?image_type=photo&orientation=horizontal&q=\n        ${this.searchQuery}&page=${this.page}&per_page=12&key=${t}`;return fetch(r).then(e=>e.json()).then(e=>(this.incrementPage(),e.hits)).catch(e=>console.log("This is error:",e))}incrementPage(){this.page+=1}resetPage(){this.page=1}get query(){return this.searchQuery}set query(e){return this.searchQuery=e}}exports.default=r;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;const e="https://pixabay.com/api",t="21816580-71493a440b7096ef43b823e18";class r{constructor(){this.searchQuery="",this.page=1}fetchPicture(){const r=`${e}/?image_type=photo&orientation=horizontal&q=\n        ${this.searchQuery}&page=${this.page}&per_page=12&key=${t}`;return fetch(r).then(e=>e.json()).then(({hits:e})=>(this.incrementPage(),e)).catch(e=>console.log("This is error:",e))}incrementPage(){this.page+=1}resetPage(){this.page=1}get query(){return this.searchQuery}set query(e){return this.searchQuery=e}}exports.default=r;
 },{}],"pAws":[function(require,module,exports) {
 var define;
 var global = arguments[3];
@@ -22,4 +22,4 @@ var t,e=arguments[3];!function(e,n){"object"==typeof exports&&"undefined"!=typeo
 },{"lodash.debounce":"PZFh","./get-refs.js":"EGsz","./apiService":"eQwa","../templates/images.hbs":"Uxz5","@pnotify/core":"txz9","@pnotify/core/dist/PNotify.css":"clu1","@pnotify/core/dist/BrightTheme.css":"clu1"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/main.js");
 },{"./sass/main.scss":"clu1","./js/main.js":"d6sW"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-13-image-finder/src.9dbbd955.js.map
+//# sourceMappingURL=/goit-js-hw-13-image-finder/src.01de8a7e.js.map
