@@ -12,21 +12,25 @@ function onSearchInput(e) {
     newsApiService.query = e.target.value.trim();
 
     if (newsApiService.query === '') {
-        
         console.log(alert('you have not entered anything'));
         return;
     }
     newsApiService.resetPage();
     clearPictureContainer();
-    newsApiService.fetchPicture().then(data => addMarcup(data));
-    setTimeout(onBtnActive,1000)
+    newsApiService.fetchPicture().then(data => {
+        addMarcup(data);
+        if (data.length === 0 || data.length < 13) {
+            return;
+        }
+
+        setTimeout(onBtnActive, 1000);
+    });
 }
 
 function onLoadMoreBtn() {
     newsApiService.fetchPicture().then(data => {
         addMarcup(data);
         onScrollImages();
-        
     });
 }
 function addMarcup(data) {
