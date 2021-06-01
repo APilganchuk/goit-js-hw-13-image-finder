@@ -2,6 +2,9 @@ var debounce = require('lodash.debounce');
 import { refs } from './get-refs.js';
 import NewsApiService from './apiService';
 import imageTpl from '../templates/images.hbs';
+import { error } from '@pnotify/core';
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
 
 const newsApiService = new NewsApiService();
 
@@ -12,7 +15,10 @@ function onSearchInput(e) {
     newsApiService.query = e.target.value.trim();
 
     if (newsApiService.query === '') {
-        console.log(alert('you have not entered anything'));
+        error({
+            text: 'you have not entered text!',
+            delay: 1000,
+        });
         return;
     }
     newsApiService.resetPage();

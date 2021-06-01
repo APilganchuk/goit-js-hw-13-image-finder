@@ -1,3 +1,8 @@
+h1 {
+    text-align: center;
+    margin-top: 0;
+    padding: 0;
+}
 li {
     list-style: none;
 }
@@ -5,6 +10,11 @@ img {
     display: block;
     width: 350px;
     height: 250px;
+}
+input[type="text"] {
+    font-weight: 400;
+    font-size: 17px;
+    
 }
 
 .search-form {
@@ -19,6 +29,7 @@ img {
     border: 2px solid black;
     border-radius: 5px;
     background-color: black;
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.4);
 }
 .button {
     position: sticky;
@@ -61,6 +72,7 @@ img {
     margin: 20px;
     border-radius: 25px;
     overflow: hidden;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
 }
 .photo-card {
     position: relative;
@@ -73,4 +85,5 @@ img {
     background-color: rgba(241, 233, 231, 0.4);
 
     border-radius: 5px;
+    
 }
