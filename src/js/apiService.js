@@ -11,9 +11,9 @@ export default class apiService {
         ${this.searchQuery}&page=${this.page}&per_page=12&key=${KEY}`;
         return fetch(URL)
             .then(response => response.json())
-            .then(data => {
+            .then(({ hits }) => {
                 this.incrementPage();
-                return data.hits;
+                return hits;
             })
             .catch(error => console.log('This is error:', error));
     }
