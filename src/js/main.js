@@ -25,7 +25,7 @@ function onSearchInput(e) {
     clearPictureContainer();
     newsApiService.fetchPicture().then(data => {
         addMarcup(data);
-        if (data.length === 0 || data.length < 13) {
+        if (data.length === 0 || data.length < 12) {
             return;
         }
 
@@ -48,7 +48,7 @@ function clearPictureContainer() {
 
 function onScrollImages() {
     const body = document.querySelector('body');
-    console.log(body);
+
     body.scrollIntoView({
         behavior: 'smooth',
         block: 'end',
