@@ -139,6 +139,12 @@ input[type='text'] {
 .lightbox__image {
     z-index: 2;
 
+    @media (max-width: 640px) {
+        width: 480px;
+    }
+
+    height: auto;
+
     position: fixed;
     top: 47%;
     left: 50%;
