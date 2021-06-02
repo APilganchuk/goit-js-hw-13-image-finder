@@ -5,11 +5,16 @@ import imageTpl from '../templates/images.hbs';
 import { error } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
-
+import { overlay } from './lightBox';
 const newsApiService = new NewsApiService();
 
 refs.searchForm.addEventListener('input', debounce(onSearchInput, 1000));
 refs.loadMoreBtn.addEventListener('click', onLoadMoreBtn);
+refs.galleryImg.addEventListener('click', onClickImage);
+// document.body.addEventListener('keypress', onKeyPress);
+// function onKeyPress(e) {
+//     console.dir(e.keyCode);
+// }
 
 function onSearchInput(e) {
     newsApiService.query = e.target.value.trim();
@@ -57,4 +62,20 @@ function onScrollImages() {
 
 function onBtnActive() {
     refs.loadMoreBtn.classList.add('is-active');
+}
+
+function onClickImage(e) {
+    if (e.target.classList.contains('gallery-js')) {
+        return;
+    }
+    overlay.show();
+    const lightbox_img = document.querySelector('.lightbox__image');
+    const modalCloseBtn = document.querySelector('.js-btn');
+    modalCloseBtn.addEventListener('click', () => {
+        overlay.close();
+    });
+
+    const largeImg = e.target.dataset.source;
+
+    lightbox_img.src = largeImg;
 }

@@ -6,7 +6,7 @@ h1 {
 li {
     list-style: none;
 }
-img {
+.gallary__img {
     display: block;
     width: 350px;
     height: 250px;
@@ -71,7 +71,6 @@ input[type='text'] {
     transform: scale(1);
     transition: transform 200ms linear;
 
-
     margin: 20px;
     border-radius: 25px;
     overflow: hidden;
@@ -103,4 +102,43 @@ input[type='text'] {
 .material-icons {
     transform: scale(1);
     transition: transform 200ms linear;
+}
+
+.basicLightbox__placeholder {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(41, 51, 51, 0.7);
+}
+.btn-modal {
+    display: inline-block;
+    position: fixed;
+    right: 5%;
+    top: 3%;
+
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-color: transparent;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    transform: rotate(0);
+    transition: transform 200ms linear;
+}
+.btn-modal:hover {
+    transform: rotate(100deg);
+}
+.lightbox__image {
+    z-index: 2;
+
+    position: fixed;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
