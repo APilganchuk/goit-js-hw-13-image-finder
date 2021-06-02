@@ -65,22 +65,19 @@ function onBtnActive() {
 }
 
 function onShowLargeImg(e) {
-    if (
-        e.target.classList.contains('gallery-js') ||
-        e.target.classList.contains('stats')
-    ) {
-        return;
+    const target = e.target;
+    if (target.classList.contains('gallary__img')) {
+        overlay.show();
+        const lightbox_img = document.querySelector('.lightbox__image');
+        const modalCloseBtn = document.querySelector('.js-btn');
+
+        modalCloseBtn.addEventListener('click', () => {
+            overlay.close();
+        });
+
+        const largeImg = target.dataset.source;
+
+        lightbox_img.src = largeImg;
     }
-
-    overlay.show();
-    const lightbox_img = document.querySelector('.lightbox__image');
-    const modalCloseBtn = document.querySelector('.js-btn');
-
-    modalCloseBtn.addEventListener('click', () => {
-        overlay.close();
-    });
-
-    const largeImg = e.target.dataset.source;
-
-    lightbox_img.src = largeImg;
+    return;
 }
