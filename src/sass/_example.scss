@@ -114,6 +114,8 @@ input[type='text'] {
     background-color: rgba(41, 51, 51, 0.7);
 }
 .btn-modal {
+    z-index: 2;
+
     display: inline-block;
     position: fixed;
     right: 5%;
