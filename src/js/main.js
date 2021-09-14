@@ -11,10 +11,10 @@ const newsApiService = new NewsApiService();
 refs.searchForm.addEventListener('input', debounce(onSearchInput, 1000));
 refs.loadMoreBtn.addEventListener('click', onLoadMoreBtn);
 refs.galleryImg.addEventListener('click', onShowLargeImg);
-// document.body.addEventListener('keypress', onKeyPress);
-// function onKeyPress(e) {
-//     console.dir(e.keyCode);
-// }
+document.body.addEventListener(
+    'keydown',
+    e => e.key === 'Enter' && e.preventDefault(),
+);
 
 function onSearchInput(e) {
     newsApiService.query = e.target.value.trim();

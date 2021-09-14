@@ -20,9 +20,14 @@ li {
 .gallary__img:hover {
     transform: scale(1.02);
 }
-input[type='text'] {
-    font-weight: 400;
-    font-size: 17px;
+.input {
+    display: block;
+    margin: 0 auto;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+    border-color: transparent;
+    
 }
 
 .search-form {
@@ -31,13 +36,16 @@ input[type='text'] {
     display: inline-block;
     position: fixed;
 
+    width: 480px;
+    padding: 5px 10px;
+
     left: 50%;
     transform: translate(-50%, -35%);
-
-    border: 2px solid black;
     border-radius: 5px;
-    background-color: black;
+
     box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.4);
+    background-color: #0093e9;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
 }
 .button {
     position: sticky;

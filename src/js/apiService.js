@@ -7,8 +7,7 @@ export default class apiService {
         this.page = 1;
     }
     fetchPicture() {
-        const URL = `${BASE_URL}/?image_type=photo&orientation=horizontal&q=
-        ${this.searchQuery}&page=${this.page}&per_page=12&key=${KEY}`;
+        const URL = `${BASE_URL}/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${KEY}`;
         return fetch(URL)
             .then(response => response.json())
             .then(({ hits }) => {
