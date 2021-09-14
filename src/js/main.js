@@ -83,10 +83,18 @@ function onShowLargeImg(e) {
         overlay.show();
         const lightbox_img = document.querySelector('.lightbox__image');
         const modalCloseBtn = document.querySelector('.js-btn');
+        const modalOverlay = document.querySelector(
+            '.basicLightbox__placeholder',
+        );
 
-        modalCloseBtn.addEventListener('click', () => {
-            overlay.close();
+        modalOverlay.addEventListener('click', e => {
+            if (e.target.classList.contains('basicLightbox__placeholder')) {
+                overlay.close();
+            }
+            return;
         });
+
+        modalCloseBtn.addEventListener('click', () => overlay.close());
 
         const largeImg = target.dataset.source;
 
