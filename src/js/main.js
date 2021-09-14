@@ -26,16 +26,26 @@ function onSearchInput(e) {
         });
         return;
     }
+
     newsApiService.resetPage();
     clearPictureContainer();
-    newsApiService.fetchPicture().then(data => {
-        addMarcup(data);
-        if (data.length === 0 || data.length < 12) {
-            return;
-        }
+    newsApiService.query &&
+        newsApiService
+            .fetchPicture()
+            .then(data => {
+                if (data.length === 0) {
+                    error({
+                        text: 'search has not given any results',
+                        delay: 1000,
+                    });
 
-        setTimeout(onBtnActive, 1000);
-    });
+                    onBtnDisabled();
+                    return;
+                }
+                addMarcup(data);
+                onBtnActive();
+            })
+            .catch(error => console.log(error));
 }
 
 function onLoadMoreBtn() {
@@ -62,6 +72,9 @@ function onScrollImages() {
 
 function onBtnActive() {
     refs.loadMoreBtn.classList.add('is-active');
+}
+function onBtnDisabled() {
+    refs.loadMoreBtn.classList.remove('is-active');
 }
 
 function onShowLargeImg(e) {

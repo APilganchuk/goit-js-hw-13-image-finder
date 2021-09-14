@@ -1,3 +1,20 @@
+body {
+    min-height: 780px;
+    background-image: radial-gradient(
+        rgb(255, 255, 255),
+        rgb(232, 232, 232),
+        rgb(209, 209, 209),
+        rgb(185, 185, 185),
+        rgb(162, 162, 162),
+        rgb(139, 139, 139),
+        rgb(116, 116, 116),
+        rgb(93, 93, 93),
+        rgb(70, 70, 70),
+        rgb(46, 46, 46),
+        rgb(23, 23, 23),
+        rgb(0, 0, 0)
+    );
+}
 h1 {
     text-align: center;
     margin-top: 0;
@@ -27,7 +44,6 @@ li {
     border-radius: 5px;
     padding: 5px 10px;
     border-color: transparent;
-    
 }
 
 .search-form {
@@ -59,9 +75,12 @@ li {
     font-weight: 900;
     padding: 10px 30px;
 
-    background-color: blue;
+    background-color: #0093e9;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
     color: #fff;
+    border-color: transparent;
     border-radius: 5px;
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.4);
 }
 .gallery {
     display: flex;
