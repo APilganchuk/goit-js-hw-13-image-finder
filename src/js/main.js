@@ -42,7 +42,7 @@ function onSearchInput(e) {
                     onBtnDisabled();
                     return;
                 }
-                addMarcup(data);
+                addMarkup(data);
                 onBtnActive();
             })
             .catch(error => console.log(error));
@@ -50,11 +50,11 @@ function onSearchInput(e) {
 
 function onLoadMoreBtn() {
     newsApiService.fetchPicture().then(data => {
-        addMarcup(data);
+        addMarkup(data);
         onScrollImages();
     });
 }
-function addMarcup(data) {
+function addMarkup(data) {
     refs.galleryImg.insertAdjacentHTML('beforeend', imageTpl(data));
 }
 function clearPictureContainer() {
@@ -79,7 +79,7 @@ function onBtnDisabled() {
 
 function onShowLargeImg(e) {
     const target = e.target;
-    if (target.classList.contains('gallary__img')) {
+    if (target.classList.contains('gallery__img')) {
         overlay.show();
         const lightbox_img = document.querySelector('.lightbox__image');
         const modalCloseBtn = document.querySelector('.js-btn');

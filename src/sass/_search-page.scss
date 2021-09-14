@@ -24,7 +24,7 @@ h1 {
 li {
     list-style: none;
 }
-.gallary__img {
+.gallery__img {
     display: block;
     width: 350px;
     height: 230px;
@@ -35,7 +35,7 @@ li {
     overflow: hidden;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
 }
-.gallary__img:hover {
+.gallery__img:hover {
     transform: scale(1.02);
 }
 .input {
